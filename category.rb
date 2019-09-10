@@ -68,7 +68,7 @@ class Category
       weight.each do |node|
         products << Product.new(
           image: image_link,
-          price: node.xpath(PRICE).text,
+          price: node.xpath(PRICE).text.to_f,
           name: "#{base_name}, #{node.xpath(NAME).text}"
         )
       end
